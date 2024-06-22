@@ -4,6 +4,8 @@ extends RigidBody2D
 var screen_size
 var currentAreaId = null
 
+signal playInstrument(instrument)
+
 func _ready():
 	screen_size = get_viewport_rect().size
 
@@ -40,6 +42,7 @@ func _process(delta):
 	if currentAreaId != null:
 		if Input.is_action_just_pressed("action"):
 			print("it works!", currentAreaId)
+			playInstrument.emit(currentAreaId)
 
 
 func _on_sound_area_enter_sound_area(id):

@@ -117,3 +117,12 @@ func _on_Conductor_measure(position):
 	elif position == 4:
 		_spawn_notes(spawn_4_beat)
 		
+
+
+func _on_main_play_instrument(instrument):
+	if instrument == "A":
+		$NoteMarker.validateInstrument(instrument)
+	elif instrument == "B":
+		$NoteMarker2.validateInstrument(instrument)
+	elif instrument == "C":
+		$NoteMarker3.validateInstrument(instrument)

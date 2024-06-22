@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuqx2xw5cldql"]
+[gd_scene load_steps=7 format=3 uid="uid://cuqx2xw5cldql"]
 
 [ext_resource type="Texture2D" uid="uid://c2xo6ibfgno5w" path="res://assets/images/atlas_48x.png" id="1_ph60p"]
+[ext_resource type="Script" path="res://scenes/map.gd" id="1_tfo2x"]
 [ext_resource type="PackedScene" uid="uid://cgabuc88rbul1" path="res://scenes/player.tscn" id="2_xd3ud"]
 [ext_resource type="PackedScene" uid="uid://djyox6kxhm3h7" path="res://scenes/sound_area.tscn" id="3_gh6sn"]
 
@@ -17155,6 +17156,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tsd5o")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_tfo2x")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 96)
@@ -17181,6 +17183,7 @@ areaId = "B"
 position = Vector2(984, 359)
 areaId = "C"
 
+[connection signal="playInstrument" from="Player" to="." method="_on_player_play_instrument"]
 [connection signal="enterSoundArea" from="SoundArea" to="Player" method="_on_sound_area_enter_sound_area"]
 [connection signal="exitSoundArea" from="SoundArea" to="Player" method="_on_sound_area_exit_sound_area"]
 [connection signal="enterSoundArea" from="SoundArea2" to="Player" method="_on_sound_area_enter_sound_area"]
