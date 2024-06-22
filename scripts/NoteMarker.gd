@@ -4,21 +4,17 @@ var hit = false
 var current_note = null
 
 @export var input = ""
+signal increment_score(score: int)
 
-func _unhandled_input(event):
-	if event.is_action(input):
-		if event.is_action_pressed(input, false):
-			if current_note != null:
-				# Mettre un signal ici
-				get_parent().increment_score(1)
-				current_note.destroy()
-			_reset()
-		else:
-			get_parent().increment_score(0)
-	if event.is_action_pressed(input):
-		frame = 1
-	elif event.is_action_released(input):
-		$PushTimer.start()
+func validateInstrument(instrumentLetter):
+	print("Bonjour les amours " + str(instrumentLetter))
+	if instrumentLetter == input:
+		if current_note != null:
+			# Mettre un signal ici
+			increment_score.emit(1)
+			current_note.destroy()
+		_reset()
+	
 
 
 # Called when the node enters the scene tree for the first time.
