@@ -32,7 +32,10 @@ shape = SubResource("RectangleShape2D_s8pkn")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(5, 5)
 
 [node name="Label" type="Label" parent="Node2D"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -10.4784
+offset_top = -11.6173
+offset_right = 10.5216
+offset_bottom = 11.3827

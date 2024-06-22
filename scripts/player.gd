@@ -41,15 +41,12 @@ func _process(delta):
 
 	if currentAreaId != null:
 		if Input.is_action_just_pressed("action"):
-			print("it works!", currentAreaId)
 			playInstrument.emit(currentAreaId)
 
 
 func _on_sound_area_enter_sound_area(id):
-	print("in")
 	currentAreaId = id
 
 
 func _on_sound_area_exit_sound_area():
-	print("out")	
 	currentAreaId = null
