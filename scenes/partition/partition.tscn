@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtl01y20872wp"]
+
+[ext_resource type="Script" path="res://scripts/partition.gd" id="1_v8fus"]
+[ext_resource type="PackedScene" uid="uid://dwsen36xsre5b" path="res://scenes/partition/note_marker.tscn" id="2_u0560"]
+[ext_resource type="PackedScene" uid="uid://bv2wynvy28cey" path="res://scenes/partition/conductor.tscn" id="3_uirvw"]
+[ext_resource type="Texture2D" uid="uid://dpbbqth82n285" path="res://Sprites/Road.png" id="4_quxc5"]
+
+[node name="Partition" type="Node2D"]
+script = ExtResource("1_v8fus")
+
+[node name="NoteMarker" parent="." instance=ExtResource("2_u0560")]
+position = Vector2(88, 80)
+
+[node name="NoteMarker2" parent="." instance=ExtResource("2_u0560")]
+position = Vector2(88, 344)
+
+[node name="NoteMarker3" parent="." instance=ExtResource("2_u0560")]
+position = Vector2(88, 212)
+
+[node name="Conductor" parent="." instance=ExtResource("3_uirvw")]
+bpm = 115
+
+[node name="Road" type="Sprite2D" parent="."]
+position = Vector2(619, 211)
+texture = ExtResource("4_quxc5")
+
+[connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
+[connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
