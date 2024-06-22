@@ -31,7 +31,7 @@ func _report_beat():
 			measureCount = 1
 		emit_signal("beat", song_position_in_beats)
 		emit_signal("measure", measureCount)
-		print(song_position_in_beats)
+
 		last_reported_beat = song_position_in_beats
 		measureCount += 1
 
