@@ -2,16 +2,13 @@ extends RigidBody2D
 
 @export var speed = 400
 var screen_size
-var inArea
+var currentAreaId = null
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
+	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
@@ -34,19 +31,16 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.flip_h = false
 
-	if inArea != null:
+	if currentAreaId != null:
 		if Input.is_action_just_pressed("action"):
-			print("it works!", inArea)
-
+			print("it works!", currentAreaId)
 
 
 func _on_sound_area_enter_sound_area(id):
 	print("in")
-	inArea = id
-	pass # Replace with function body.
+	currentAreaId = id
 
 
 func _on_sound_area_exit_sound_area():
 	print("out")	
-	inArea = null
-	pass # Replace with function body.
+	currentAreaId = null
