@@ -7,13 +7,14 @@ var current_note = null
 signal increment_score(score: int)
 
 func validateInstrument(instrumentLetter):
-	print("Bonjour les amours " + str(instrumentLetter))
 	if instrumentLetter == input:
 		if current_note != null:
-			# Mettre un signal ici
 			increment_score.emit(1)
 			current_note.destroy()
 		_reset()
+	else:
+		print("loser")
+ 
 	
 
 

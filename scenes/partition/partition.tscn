@@ -10,12 +10,15 @@ script = ExtResource("1_v8fus")
 
 [node name="NoteMarker" parent="." instance=ExtResource("2_u0560")]
 position = Vector2(88, 80)
+input = "A"
 
 [node name="NoteMarker2" parent="." instance=ExtResource("2_u0560")]
-position = Vector2(88, 344)
+position = Vector2(88, 212)
+input = "B"
 
 [node name="NoteMarker3" parent="." instance=ExtResource("2_u0560")]
-position = Vector2(88, 212)
+position = Vector2(88, 344)
+input = "C"
 
 [node name="Conductor" parent="." instance=ExtResource("3_uirvw")]
 bpm = 115
