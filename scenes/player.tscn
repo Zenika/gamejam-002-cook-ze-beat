@@ -1,17 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgabuc88rbul1"]
+[gd_scene load_steps=7 format=3 uid="uid://cgabuc88rbul1"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_0ultv"]
-[ext_resource type="Texture2D" uid="uid://bfw7hdqkotlym" path="res://assets/images/playerGrey_walk1.png" id="2_x1gov"]
-[ext_resource type="Texture2D" uid="uid://jupkvygcsa6e" path="res://assets/images/playerGrey_walk2.png" id="3_4xewx"]
+[ext_resource type="Texture2D" uid="uid://cdco5urf43jbf" path="res://assets/player/alienPink_stand.png" id="2_s0iok"]
+[ext_resource type="Texture2D" uid="uid://bbk2rbmf4j0pl" path="res://assets/player/alienPink_walk2.png" id="3_n32w1"]
+[ext_resource type="Texture2D" uid="uid://bj4qw3w3vnxn" path="res://assets/player/alienPink_walk1.png" id="4_hna1u"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4hwsl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3p5u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_x1gov")
+"texture": ExtResource("2_s0iok")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_4xewx")
+"texture": ExtResource("3_n32w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hna1u")
 }],
 "loop": true,
 "name": &"walk",
@@ -19,7 +23,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctnw8"]
-size = Vector2(54, 17)
+size = Vector2(41, 24)
 
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -28,10 +32,12 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_4hwsl")
+sprite_frames = SubResource("SpriteFrames_i3p5u")
 animation = &"walk"
+frame = 1
+frame_progress = 0.487714
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 25.5)
+position = Vector2(-0.5, 34)
 shape = SubResource("RectangleShape2D_ctnw8")
 one_way_collision = true
