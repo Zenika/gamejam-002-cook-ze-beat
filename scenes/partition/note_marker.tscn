@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwsen36xsre5b"]
+
+[ext_resource type="Texture2D" uid="uid://dd6wqrccvgwn" path="res://Sprites/note_idle.png" id="1_1m685"]
+[ext_resource type="Texture2D" uid="uid://imth1id0axis" path="res://Sprites/note.png" id="1_b4nu7"]
+[ext_resource type="Script" path="res://scripts/NoteMarker.gd" id="1_jmc1j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bv380"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1m685")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_b4nu7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gor0v"]
+size = Vector2(100, 100)
+
+[node name="NoteMarker" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_bv380")
+script = ExtResource("1_jmc1j")
+input = "h"
+
+[node name="HitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+shape = SubResource("RectangleShape2D_gor0v")
+
+[node name="PushTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="HitArea" to="." method="_on_HitArea_area_entered"]
+[connection signal="area_exited" from="HitArea" to="." method="_on_HitArea_area_exited"]
+[connection signal="timeout" from="PushTimer" to="." method="_on_PushTimer_timeout"]

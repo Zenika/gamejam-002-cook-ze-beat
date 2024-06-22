@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dru25kve45gt6"]
+
+[ext_resource type="Script" path="res://scripts/Note.gd" id="1_5tygb"]
+[ext_resource type="Texture2D" uid="uid://cwrepckf53670" path="res://Sprites/note_moving.png" id="2_6251i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ica5f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6251i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8pkn"]
+size = Vector2(100, 100)
+
+[node name="Note" type="Area2D"]
+script = ExtResource("1_5tygb")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+gravity = Vector2(980, 2.08165e-12)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ica5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s8pkn")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_right = 40.0
+offset_bottom = 23.0
