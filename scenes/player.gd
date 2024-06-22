@@ -24,6 +24,12 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.stop()
 		
+	if Input.is_action_pressed("sprint"):
+		velocity *= 2
+		
+	if Input.is_action_just_pressed("dash"):
+		velocity *= 5
+		
 	move_and_collide(velocity * delta)
 
 	if velocity.x < 0:
