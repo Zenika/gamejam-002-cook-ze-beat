@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Sprite2D
 
 var hit = false
 var current_note = null

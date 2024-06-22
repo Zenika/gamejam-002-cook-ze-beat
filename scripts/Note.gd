@@ -44,7 +44,7 @@ func destroy():
 	$AnimatedSprite2D.visible = false
 	$Timer.start()
 	hit = true
-	$Node2D/Label.text = "BRAVO"
+	$Node2D/Label.text = "🔥"
 	$Node2D/Label.modulate = Color('f6d6bd')
 	
 func _on_Timer_timeout():
