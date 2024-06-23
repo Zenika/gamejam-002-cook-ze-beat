@@ -20218,6 +20218,17 @@ sprintAction = "sprint_2"
 dashAction = "dash_2"
 actionAction = "action_2"
 
+[node name="Player3" parent="." instance=ExtResource("2_xd3ud")]
+position = Vector2(751, 227)
+playerIndex = 2
+moveRightAction = "move_right_3"
+moveLeftAction = "move_left_3"
+moveUpAction = "move_up_3"
+moveDownAction = "move_down_3"
+sprintAction = "sprint_3"
+dashAction = "dash_3"
+actionAction = "action_3"
+
 [node name="SoundArea" parent="." instance=ExtResource("4_ndnc6")]
 position = Vector2(601, 158)
 
@@ -20231,6 +20242,7 @@ areaId = "C"
 
 [connection signal="playInstrument" from="Player" to="." method="_on_player_play_instrument"]
 [connection signal="playInstrument" from="Player2" to="." method="_on_player_play_instrument"]
+[connection signal="playInstrument" from="Player3" to="." method="_on_player_play_instrument"]
 [connection signal="enterSoundArea" from="SoundArea" to="Player" method="_on_sound_area_enter_sound_area"]
 [connection signal="enterSoundArea" from="SoundArea" to="Player2" method="_on_sound_area_enter_sound_area"]
 [connection signal="exitSoundArea" from="SoundArea" to="Player" method="_on_sound_area_exit_sound_area"]
