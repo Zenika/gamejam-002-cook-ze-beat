@@ -90,3 +90,5 @@ animation = &"Walk_side"
 position = Vector2(-1, 19)
 shape = SubResource("RectangleShape2D_ctnw8")
 one_way_collision = true
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

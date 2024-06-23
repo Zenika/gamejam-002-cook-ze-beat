@@ -9,11 +9,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_body_entered(body):
-	enterSoundArea.emit(areaId)
-	pass # Replace with function body.
-
-
+	if body is Player:
+		body.onEnteredArea(areaId)
 
 func _on_body_exited(body):
-	exitSoundArea.emit()	
-	pass # Replace with function body.
+	if body is Player:
+		body.onExitedArea()
