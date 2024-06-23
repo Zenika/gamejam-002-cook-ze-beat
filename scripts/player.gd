@@ -12,6 +12,11 @@ var currentAreaIds = [null, null, null, null]
 @export var dashAction = "dash"
 @export var actionAction = "action" 
 
+var playerSkins = [
+	load("res://assets/player/player_1.tres"), 
+	load("res://assets/player/player_2.tres")
+	]
+
 signal playInstrument(instrument)
 
 func animate_on_move(velocity):
@@ -30,7 +35,7 @@ func animate_on_move(velocity):
 			$AnimatedSprite2D.play("Walk_front")
 
 func _ready():
-	print('joueur %s ready avec la touche pour dasher étant %s' % [playerIndex + 1, dashAction])
+	$AnimatedSprite2D.sprite_frames = playerSkins[playerIndex]
 
 func _process(delta):
 	var velocity = Vector2.ZERO
