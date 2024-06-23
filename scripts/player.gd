@@ -2,6 +2,7 @@ extends RigidBody2D
 class_name Player
 
 var currentAreaIds = [null, null, null, null]
+var isInRiver = [false, false, false, false]
 @export var speed = 400
 @export var playerIndex: int
 @export var playerColor: Color
@@ -11,7 +12,7 @@ var currentAreaIds = [null, null, null, null]
 @export var moveDownAction = "move_down"
 @export var sprintAction = "sprint"
 @export var dashAction = "dash"
-@export var actionAction = "action" 
+@export var actionAction = "action"
 
 var playerSkins = [
 	load("res://assets/player/player_1.tres"), 
@@ -58,13 +59,16 @@ func _process(delta):
 		animate_on_move(velocity)
 	else:
 		$AnimatedSprite2D.play("Stand")
+	
+	if isInRiver[playerIndex]:
+		velocity.x -= 0.5 * speed
 		
 	if Input.is_action_pressed(sprintAction):
 		velocity *= 2
 		
 	if Input.is_action_just_pressed(dashAction):
 		velocity *= 5
-		
+	
 	move_and_collide(velocity * delta)
 
 	if velocity.x < 0:
@@ -76,6 +80,8 @@ func _process(delta):
 		if Input.is_action_just_pressed(actionAction):
 			playInstrument.emit(currentAreaIds[playerIndex])
 
+func setIsInRiver(boolean):
+	isInRiver[playerIndex] = boolean
 
 func onEnteredArea(id):
 	currentAreaIds[playerIndex] = id
