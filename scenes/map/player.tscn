@@ -74,7 +74,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctnw8"]
-size = Vector2(59, 24)
+size = Vector2(52, 24)
 
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -82,11 +82,11 @@ script = ExtResource("1_0ultv")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.813953, 0.813954)
+scale = Vector2(0.78481, 0.78481)
 sprite_frames = SubResource("SpriteFrames_i3p5u")
 animation = &"Walk_side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 20)
+position = Vector2(-1, 19)
 shape = SubResource("RectangleShape2D_ctnw8")
 one_way_collision = true
