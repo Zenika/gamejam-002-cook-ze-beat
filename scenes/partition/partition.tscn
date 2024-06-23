@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtl01y20872wp"]
+[gd_scene load_steps=9 format=3 uid="uid://dtl01y20872wp"]
 
 [ext_resource type="Script" path="res://scripts/partition.gd" id="1_v8fus"]
 [ext_resource type="PackedScene" uid="uid://dwsen36xsre5b" path="res://scenes/partition/note_marker.tscn" id="2_u0560"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpbbob0ttfc1d" path="res://Sprites/notes_markers/blue.png" id="5_lcf4y"]
 [ext_resource type="Texture2D" uid="uid://dlyp1oteodl0p" path="res://Sprites/notes_markers/red.png" id="6_2uief"]
 [ext_resource type="Texture2D" uid="uid://d3j1h0nm2fi1t" path="res://Sprites/notes_markers/green.png" id="7_wp0wo"]
+[ext_resource type="PackedScene" uid="uid://dtbg7s6asp1bj" path="res://scenes/score.tscn" id="8_mr4dm"]
 
 [node name="Partition" type="Node2D"]
 script = ExtResource("1_v8fus")
@@ -42,5 +43,12 @@ texture = ExtResource("6_2uief")
 position = Vector2(90, 82)
 texture = ExtResource("7_wp0wo")
 
+[node name="Score" parent="." instance=ExtResource("8_mr4dm")]
+position = Vector2(-360, 9)
+scale = Vector2(3.55, 3.55)
+
+[connection signal="increment_score" from="NoteMarker" to="Score" method="incrementScore"]
+[connection signal="increment_score" from="NoteMarker2" to="Score" method="incrementScore"]
+[connection signal="increment_score" from="NoteMarker3" to="Score" method="incrementScore"]
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
