@@ -14,7 +14,8 @@ var currentAreaIds = [null, null, null, null]
 
 var playerSkins = [
 	load("res://assets/player/player_1.tres"), 
-	load("res://assets/player/player_2.tres")
+	load("res://assets/player/player_2.tres"),
+	load("res://assets/player/player_3.tres")
 	]
 
 signal playInstrument(instrument)
