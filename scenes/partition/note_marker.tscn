@@ -16,6 +16,11 @@ shape = SubResource("RectangleShape2D_gor0v")
 
 [node name="PushTimer" type="Timer" parent="."]
 
+[node name="BumpTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="area_entered" from="HitArea" to="." method="_on_HitArea_area_entered"]
 [connection signal="area_exited" from="HitArea" to="." method="_on_HitArea_area_exited"]
 [connection signal="timeout" from="PushTimer" to="." method="_on_PushTimer_timeout"]
+[connection signal="timeout" from="BumpTimer" to="." method="_lower_instrument"]
