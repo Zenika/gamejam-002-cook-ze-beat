@@ -111,8 +111,7 @@ func _spawn_notes(to_spawn):
 
 		add_child(instance)
 
-func losePoints(points: int):
-	$Score.incrementScore(points)
+
 
 func _on_Conductor_measure(position):
 	if position == 1:

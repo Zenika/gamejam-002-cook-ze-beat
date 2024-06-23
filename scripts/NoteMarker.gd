@@ -83,7 +83,6 @@ func _on_okay_area_area_entered(area):
 
 func _on_okay_area_area_exited(area):
 	if area.is_in_group("note"):
-		losePoints()
 		okay = false
 		current_note = null
 	
