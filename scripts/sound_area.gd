@@ -1,8 +1,6 @@
 extends Area2D
 
 @export var areaId = "A"
-signal enterSoundArea(id: String)
-signal exitSoundArea()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
