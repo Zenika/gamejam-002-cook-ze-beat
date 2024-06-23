@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba4k83jd1t2k7"
-path="res://.godot/imported/TileSets Terrain Example.webp-b15544157a2e61e44553c8e1d56ba1d4.ctex"
+uid="uid://k4cp0g8ajoc0"
+path="res://.godot/imported/stand.png-e56dcc3b7cb5209f411f04f2b748be8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/TileSets Terrain Example.webp"
-dest_files=["res://.godot/imported/TileSets Terrain Example.webp-b15544157a2e61e44553c8e1d56ba1d4.ctex"]
+source_file="res://assets/player/Alien/stand.png"
+dest_files=["res://.godot/imported/stand.png-e56dcc3b7cb5209f411f04f2b748be8d.ctex"]
 
 [params]
 

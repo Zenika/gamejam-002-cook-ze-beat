@@ -1,29 +1,80 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgabuc88rbul1"]
+[gd_scene load_steps=13 format=3 uid="uid://cgabuc88rbul1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0ultv"]
-[ext_resource type="Texture2D" uid="uid://cdco5urf43jbf" path="res://assets/player/alienPink_stand.png" id="2_s0iok"]
-[ext_resource type="Texture2D" uid="uid://bbk2rbmf4j0pl" path="res://assets/player/alienPink_walk2.png" id="3_n32w1"]
-[ext_resource type="Texture2D" uid="uid://bj4qw3w3vnxn" path="res://assets/player/alienPink_walk1.png" id="4_hna1u"]
+[ext_resource type="Texture2D" uid="uid://k4cp0g8ajoc0" path="res://assets/player/Alien/stand.png" id="2_kbftq"]
+[ext_resource type="Texture2D" uid="uid://ci26bts7y0omd" path="res://assets/player/Alien/stand_side.png" id="3_jg65p"]
+[ext_resource type="Texture2D" uid="uid://dy82i5e6qcduy" path="res://assets/player/Alien/stand_back.png" id="3_pslay"]
+[ext_resource type="Texture2D" uid="uid://e3cfk8l7pfix" path="res://assets/player/Alien/walk_side_1.png" id="4_0lihe"]
+[ext_resource type="Texture2D" uid="uid://cklndhawryic3" path="res://assets/player/Alien/walk_back_1.png" id="4_ktwec"]
+[ext_resource type="Texture2D" uid="uid://157cq5qo1p8o" path="res://assets/player/Alien/walk_back_2.png" id="5_mcfn2"]
+[ext_resource type="Texture2D" uid="uid://dy0jll1k8gks5" path="res://assets/player/Alien/walk_front_1.png" id="6_3yiy8"]
+[ext_resource type="Texture2D" uid="uid://bn34r8fr82io2" path="res://assets/player/Alien/walk_front_2.png" id="7_lfy6x"]
+[ext_resource type="Texture2D" uid="uid://chdtdkf384rfb" path="res://assets/player/Alien/walk_side_2.png" id="10_i4n6i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i3p5u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_s0iok")
+"texture": ExtResource("2_kbftq")
+}],
+"loop": false,
+"name": &"Stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ktwec")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_n32w1")
+"texture": ExtResource("3_pslay")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_hna1u")
+"texture": ExtResource("5_mcfn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pslay")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"Walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3yiy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kbftq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lfy6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kbftq")
+}],
+"loop": true,
+"name": &"Walk_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0lihe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jg65p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i4n6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jg65p")
+}],
+"loop": true,
+"name": &"Walk_side",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctnw8"]
-size = Vector2(41, 24)
+size = Vector2(59, 24)
 
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -31,13 +82,11 @@ script = ExtResource("1_0ultv")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.813953, 0.813954)
 sprite_frames = SubResource("SpriteFrames_i3p5u")
-animation = &"walk"
-frame = 1
-frame_progress = 0.487714
+animation = &"Walk_side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 34)
+position = Vector2(-0.5, 20)
 shape = SubResource("RectangleShape2D_ctnw8")
 one_way_collision = true
