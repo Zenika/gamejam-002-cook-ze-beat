@@ -20207,6 +20207,17 @@ layer_6/tile_data = PackedInt32Array(-589824, 2097152, 4, -524288, 2097152, 4, -
 [node name="Player" parent="." instance=ExtResource("2_xd3ud")]
 position = Vector2(738, 250)
 
+[node name="Player2" parent="." instance=ExtResource("2_xd3ud")]
+position = Vector2(896, 304)
+playerIndex = 1
+moveRightAction = "move_right_2"
+moveLeftAction = "move_left_2"
+moveUpAction = "move_up_2"
+moveDownAction = "move_down_2"
+sprintAction = "sprint_2"
+dashAction = "dash_2"
+actionAction = "action_2"
+
 [node name="SoundArea" parent="." instance=ExtResource("4_ndnc6")]
 position = Vector2(601, 158)
 
@@ -20219,8 +20230,11 @@ position = Vector2(888, 201)
 areaId = "C"
 
 [connection signal="playInstrument" from="Player" to="." method="_on_player_play_instrument"]
+[connection signal="playInstrument" from="Player2" to="." method="_on_player_play_instrument"]
 [connection signal="enterSoundArea" from="SoundArea" to="Player" method="_on_sound_area_enter_sound_area"]
+[connection signal="enterSoundArea" from="SoundArea" to="Player2" method="_on_sound_area_enter_sound_area"]
 [connection signal="exitSoundArea" from="SoundArea" to="Player" method="_on_sound_area_exit_sound_area"]
+[connection signal="exitSoundArea" from="SoundArea" to="Player2" method="_on_sound_area_exit_sound_area"]
 [connection signal="enterSoundArea" from="SoundArea2" to="Player" method="_on_sound_area_enter_sound_area"]
 [connection signal="exitSoundArea" from="SoundArea2" to="Player" method="_on_sound_area_exit_sound_area"]
 [connection signal="enterSoundArea" from="SoundArea3" to="Player" method="_on_sound_area_enter_sound_area"]

@@ -1,8 +1,15 @@
 extends RigidBody2D
 
+var currentAreaIds = [null, null, null, null]
 @export var speed = 400
-var screen_size
-var currentAreaId = null
+@export var playerIndex: int
+@export var moveRightAction = "move_right"
+@export var moveLeftAction = "move_left"
+@export var moveUpAction = "move_up"
+@export var moveDownAction = "move_down"
+@export var sprintAction = "sprint"
+@export var dashAction = "dash"
+@export var actionAction = "action" 
 
 signal playInstrument(instrument)
 
@@ -22,17 +29,17 @@ func animate_on_move(velocity):
 			$AnimatedSprite2D.play("Walk_front")
 
 func _ready():
-	screen_size = get_viewport_rect().size
+	print('joueur %s ready avec la touche pour dasher étant %s' % [playerIndex + 1, dashAction])
 
 func _process(delta):
 	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed(moveRightAction):
 		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed(moveLeftAction):
 		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed(moveDownAction):
 		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed(moveUpAction):
 		velocity.y -= 1
 	
 	if velocity.length() > 0:
@@ -41,10 +48,10 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.play("Stand")
 		
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed(sprintAction):
 		velocity *= 2
 		
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed(dashAction):
 		velocity *= 5
 		
 	move_and_collide(velocity * delta)
@@ -54,14 +61,13 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.flip_h = false
 
-	if currentAreaId != null:
-		if Input.is_action_just_pressed("action"):
-			playInstrument.emit(currentAreaId)
+	if currentAreaIds[playerIndex] != null:
+		if Input.is_action_just_pressed(actionAction):
+			playInstrument.emit(currentAreaIds[playerIndex])
 
 
-func _on_sound_area_enter_sound_area(id):
-	currentAreaId = id
+func onEnteredArea(id):
+	currentAreaIds[playerIndex] = id
 
-
-func _on_sound_area_exit_sound_area():
-	currentAreaId = null
+func onExitedArea():
+	currentAreaIds[playerIndex] = null
