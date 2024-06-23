@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://c2apoo0x38def"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://c2apoo0x38def"]
 
 [ext_resource type="FontFile" uid="uid://b420typ7ppplu" path="res://assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_8fcsk"]
 [ext_resource type="Texture2D" uid="uid://bsdxvsxgvymyv" path="res://assets/menu/button_square_depth_border.png" id="2_6awmm"]
@@ -12,6 +12,9 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xa1yy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5v1br"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2d66"]
+bg_color = Color(0, 0, 0, 0.294118)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm6lb"]
 texture = ExtResource("2_6awmm")
@@ -36,6 +39,8 @@ Label/fonts/font = ExtResource("1_8fcsk")
 MainTitle/base_type = &"Label"
 MainTitle/font_sizes/font_size = 46
 MainTitle/styles/normal = SubResource("StyleBoxEmpty_5v1br")
+MenuPanelContainer/base_type = &"PanelContainer"
+MenuPanelContainer/styles/panel = SubResource("StyleBoxFlat_e2d66")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_gm6lb")
 TitleContainer/base_type = &"PanelContainer"
 TitleContainer/styles/panel = SubResource("StyleBoxEmpty_63d8s")

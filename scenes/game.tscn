@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bybxvkcocpkat"]
+[gd_scene load_steps=6 format=3 uid="uid://bybxvkcocpkat"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_665sf"]
 [ext_resource type="PackedScene" uid="uid://cuqx2xw5cldql" path="res://scenes/map/map.tscn" id="1_xaelo"]
 [ext_resource type="PackedScene" uid="uid://dtl01y20872wp" path="res://scenes/partition/partition.tscn" id="2_rl4dk"]
+[ext_resource type="PackedScene" uid="uid://bldydxp782eb1" path="res://scenes/hud/hud.tscn" id="4_xsxg5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_16yf7"]
 load_path = "res://.godot/imported/logo.png-0da8f6a4d54f3f921aaad24ff5236571.ctex"
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_665sf")
 
 [node name="Map" parent="." instance=ExtResource("1_xaelo")]
 position = Vector2(-1, 328)
@@ -24,5 +27,17 @@ position = Vector2(203, 166)
 rotation = -0.441568
 scale = Vector2(0.329134, 0.329134)
 texture = SubResource("CompressedTexture2D_16yf7")
+
+[node name="Hud" parent="." instance=ExtResource("4_xsxg5")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 968.0
+offset_top = 539.0
+offset_right = 968.0
+offset_bottom = 539.0
 
 [connection signal="playInstrument" from="Map" to="Partition" method="_on_main_play_instrument"]
