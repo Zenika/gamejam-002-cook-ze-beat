@@ -3,8 +3,10 @@ extends Node
 var soundLucas = preload("res://assets/sounds/cook-ze-beat-lucas.wav")
 var soundNirina = preload("res://assets/sounds/cook-ze-beat-nirina.wav")
 var soundPops = preload("res://assets/sounds/cook-ze-beat-pops.wav")
+var soundTheo = preload("res://assets/sounds/cook-ze-beat-theo.wav")
+var soundEmeric = preload("res://assets/sounds/cook-ze-beat-emeric.wav")
 
-var sounds = [soundLucas, soundNirina, soundPops]
+var sounds = [soundLucas, soundNirina, soundPops, soundTheo, soundEmeric]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
