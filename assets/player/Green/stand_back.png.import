@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cklndhawryic3"
-path="res://.godot/imported/walk_back_1.png-31aba8345d473d05bafbabd17ffe84db.ctex"
+uid="uid://dy82i5e6qcduy"
+path="res://.godot/imported/stand_back.png-c3e9ca4e09a628fc4315a40ad0b03337.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Alien/walk_back_1.png"
-dest_files=["res://.godot/imported/walk_back_1.png-31aba8345d473d05bafbabd17ffe84db.ctex"]
+source_file="res://assets/player/Green/stand_back.png"
+dest_files=["res://.godot/imported/stand_back.png-c3e9ca4e09a628fc4315a40ad0b03337.ctex"]
 
 [params]
 
