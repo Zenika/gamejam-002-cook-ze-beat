@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_j1xnl"]
 [ext_resource type="Texture2D" uid="uid://c2xo6ibfgno5w" path="res://assets/images/atlas_48x.png" id="1_ph60p"]
 [ext_resource type="PackedScene" uid="uid://cgabuc88rbul1" path="res://scenes/map/player.tscn" id="2_xd3ud"]
-[ext_resource type="Texture2D" uid="uid://b6p3goh8l3liy" path="res://assets/images/objects x2.png" id="3_qqre4"]
-[ext_resource type="Texture2D" uid="uid://dabkprw0iawj4" path="res://assets/images/atlas_wb_48x 3.png" id="4_i3bst"]
+[ext_resource type="Texture2D" path="res://assets/images/objects x2.png" id="3_qqre4"]
+[ext_resource type="Texture2D" path="res://assets/images/atlas_wb_48x 3.png" id="4_i3bst"]
 [ext_resource type="PackedScene" uid="uid://djyox6kxhm3h7" path="res://scenes/map/sound_area.tscn" id="4_ndnc6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tsd5o"]
