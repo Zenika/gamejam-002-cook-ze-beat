@@ -1,0 +1,70 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://btvlf4bh2uj5"]
+
+[ext_resource type="Texture2D" uid="uid://k4cp0g8ajoc0" path="res://assets/player/Green/stand.png" id="1_2nolc"]
+[ext_resource type="Texture2D" uid="uid://cklndhawryic3" path="res://assets/player/Green/walk_back_1.png" id="2_3d4fp"]
+[ext_resource type="Texture2D" uid="uid://dy82i5e6qcduy" path="res://assets/player/Green/stand_back.png" id="3_kx8gi"]
+[ext_resource type="Texture2D" uid="uid://157cq5qo1p8o" path="res://assets/player/Green/walk_back_2.png" id="4_rdgje"]
+[ext_resource type="Texture2D" uid="uid://dy0jll1k8gks5" path="res://assets/player/Green/walk_front_1.png" id="5_lns5m"]
+[ext_resource type="Texture2D" uid="uid://bn34r8fr82io2" path="res://assets/player/Green/walk_front_2.png" id="6_cyokp"]
+[ext_resource type="Texture2D" uid="uid://e3cfk8l7pfix" path="res://assets/player/Green/walk_side_1.png" id="7_dpaw6"]
+[ext_resource type="Texture2D" uid="uid://ci26bts7y0omd" path="res://assets/player/Green/stand_side.png" id="8_ewd6m"]
+[ext_resource type="Texture2D" uid="uid://chdtdkf384rfb" path="res://assets/player/Green/walk_side_2.png" id="9_n011j"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2nolc")
+}],
+"loop": false,
+"name": &"Stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3d4fp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kx8gi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rdgje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kx8gi")
+}],
+"loop": true,
+"name": &"Walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lns5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2nolc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cyokp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2nolc")
+}],
+"loop": true,
+"name": &"Walk_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_dpaw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ewd6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n011j")
+}],
+"loop": true,
+"name": &"Walk_side",
+"speed": 5.0
+}]
