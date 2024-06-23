@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwsen36xsre5b"]
+[gd_scene load_steps=7 format=3 uid="uid://dwsen36xsre5b"]
 
 [ext_resource type="Script" path="res://scripts/NoteMarker.gd" id="1_jmc1j"]
+[ext_resource type="AudioStream" uid="uid://bdqixs6q6fe1j" path="res://Sounds/ouch_sound.wav" id="2_mhv14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gor0v"]
 size = Vector2(100, 100)
@@ -39,6 +40,11 @@ shape = SubResource("RectangleShape2D_jkcef")
 
 [node name="OkayCollisionShape2D" type="CollisionShape2D" parent="OkayArea"]
 shape = SubResource("RectangleShape2D_psuxn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mhv14")
+volume_db = 15.0
+panning_strength = 0.0
 
 [connection signal="area_entered" from="HitArea" to="." method="_on_HitArea_area_entered"]
 [connection signal="area_exited" from="HitArea" to="." method="_on_HitArea_area_exited"]

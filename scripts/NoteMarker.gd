@@ -19,7 +19,9 @@ func validateInstrument(instrumentLetter):
 		if current_note != null:
 			winPoints()
 		else:
+			# Quand on tape pas au bon moment
 			losePoints()
+			$AudioStreamPlayer2D.play()
 		_reset()
 	else:
 		losePoints()
@@ -38,6 +40,7 @@ func winPoints():
 	
 
 func losePoints():
+
 	increment_score.emit(-1)
 
 
