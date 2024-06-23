@@ -9,9 +9,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_body_entered(body):
-	body.onEnteredArea(areaId)
-
-
+	if body is Player:
+		body.onEnteredArea(areaId)
 
 func _on_body_exited(body):
-	body.onExitedArea()
+	if body is Player:
+		body.onExitedArea()

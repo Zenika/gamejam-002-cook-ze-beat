@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Player
 
 var currentAreaIds = [null, null, null, null]
 @export var speed = 400
