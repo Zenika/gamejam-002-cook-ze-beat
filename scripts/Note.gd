@@ -29,10 +29,13 @@ func _physics_process(delta):
 func initialize(lane):
 	if lane == 0:
 		position = TOP_LANE_SPAWN
+		$AnimatedSprite2D.frame = 0
 	elif lane == 1:
 		position = MID_LANE_SPAWN
+		$AnimatedSprite2D.frame = 1
 	elif lane == 2:
 		position = BOTTOM_LANE_SPAWN
+		$AnimatedSprite2D.frame = 2
 	else:
 		printerr("Invalid lane set for note: " + str(lane))
 		return
