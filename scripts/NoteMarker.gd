@@ -6,9 +6,6 @@ var okay = false
 
 var current_note = null
 
-const SHAKE_MOVEMENT_Y = 5
-const SHAKE_MOVEMENT_X = 5
-
 const PERFECT_POINTS = 3
 const GOOD_POINTS = 2
 const OKAY_POINTS = 1
@@ -17,7 +14,7 @@ const OKAY_POINTS = 1
 signal increment_score(score: int)
 
 func validateInstrument(instrumentLetter):
-	_raise_instrument()
+
 	if instrumentLetter == input:
 		if current_note != null:
 			winPoints()
@@ -42,16 +39,7 @@ func winPoints():
 
 func losePoints():
 	increment_score.emit(-1)
- 
-func _raise_instrument():
-	if !$BumpTimer.is_stopped():
-		return
-	position.y -= SHAKE_MOVEMENT_Y
-	position.x -= SHAKE_MOVEMENT_X
-	$BumpTimer.start()
-func _lower_instrument():
-	position.y += SHAKE_MOVEMENT_Y
-	position.x += SHAKE_MOVEMENT_X
+
 
 		
 func _reset():

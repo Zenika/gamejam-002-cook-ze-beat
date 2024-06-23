@@ -25,6 +25,9 @@ var instance
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	$NoteMarker3/RedNoteFeedback.visible = false
+	$NoteMarker2/BlueNoteFeedback.visible = false
+	$NoteMarker/GreenNoteFeedback.visible = false
 	$Conductor.play_with_beat_offset(12)
 
 
@@ -126,7 +129,25 @@ func _on_Conductor_measure(position):
 func _on_main_play_instrument(instrument):
 	if instrument == "A":
 		$NoteMarker.validateInstrument(instrument)
+		$NoteMarker/GreenNoteFeedback.visible = true
+		$NoteMarker/GreenFeedbackTimer.start()
 	elif instrument == "B":
 		$NoteMarker2.validateInstrument(instrument)
+		$NoteMarker2/BlueNoteFeedback.visible = true
+		$NoteMarker2/BlueFeedbackTimer.start()
 	elif instrument == "C":
 		$NoteMarker3.validateInstrument(instrument)
+		$NoteMarker3/RedNoteFeedback.visible = true
+		$NoteMarker3/RedFeedbackTimer.start()
+
+
+func _on_red_feedback_timer_timeout():
+	$NoteMarker3/RedNoteFeedback.visible = false
+
+
+func _on_blue_feedback_timer_timeout():
+	$NoteMarker2/BlueNoteFeedback.visible = false
+
+
+func _on_green_feedback_timer_timeout():
+	$NoteMarker/GreenNoteFeedback.visible = false

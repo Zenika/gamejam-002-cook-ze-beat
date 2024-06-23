@@ -1,34 +1,64 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtl01y20872wp"]
+[gd_scene load_steps=9 format=3 uid="uid://dtl01y20872wp"]
 
 [ext_resource type="Script" path="res://scripts/partition.gd" id="1_v8fus"]
 [ext_resource type="PackedScene" uid="uid://dwsen36xsre5b" path="res://scenes/partition/note_marker.tscn" id="2_u0560"]
 [ext_resource type="PackedScene" uid="uid://bv2wynvy28cey" path="res://scenes/partition/conductor.tscn" id="3_uirvw"]
 [ext_resource type="Texture2D" uid="uid://dpbbqth82n285" path="res://Sprites/Road.png" id="4_quxc5"]
+[ext_resource type="Texture2D" uid="uid://cpbbob0ttfc1d" path="res://Sprites/notes_markers/blue.png" id="5_lcf4y"]
 [ext_resource type="Texture2D" uid="uid://dlyp1oteodl0p" path="res://Sprites/notes_markers/red.png" id="6_2uief"]
+[ext_resource type="Texture2D" uid="uid://d3j1h0nm2fi1t" path="res://Sprites/notes_markers/green.png" id="7_wp0wo"]
 [ext_resource type="PackedScene" uid="uid://dtbg7s6asp1bj" path="res://scenes/score.tscn" id="8_mr4dm"]
 
 [node name="Partition" type="Node2D"]
 script = ExtResource("1_v8fus")
 
 [node name="NoteMarker" parent="." instance=ExtResource("2_u0560")]
-visible = false
 position = Vector2(88, 80)
 input = "A"
 
+[node name="GreenNoteFeedback" type="Sprite2D" parent="NoteMarker"]
+modulate = Color(1, 1, 1, 0.403922)
+position = Vector2(878.5, 0)
+scale = Vector2(18.95, 1.28)
+texture = ExtResource("7_wp0wo")
+
+[node name="GreenFeedbackTimer" type="Timer" parent="NoteMarker"]
+wait_time = 0.4
+one_shot = true
+
 [node name="NoteMarker2" parent="." instance=ExtResource("2_u0560")]
-visible = false
 position = Vector2(88, 212)
 input = "B"
 
+[node name="BlueNoteFeedback" type="Sprite2D" parent="NoteMarker2"]
+modulate = Color(1, 1, 1, 0.403922)
+position = Vector2(878.5, 0)
+scale = Vector2(18.95, 1.28)
+texture = ExtResource("5_lcf4y")
+
+[node name="BlueFeedbackTimer" type="Timer" parent="NoteMarker2"]
+wait_time = 0.4
+one_shot = true
+
 [node name="NoteMarker3" parent="." instance=ExtResource("2_u0560")]
-visible = false
 position = Vector2(88, 344)
 input = "C"
+
+[node name="RedNoteFeedback" type="Sprite2D" parent="NoteMarker3"]
+modulate = Color(1, 1, 1, 0.403922)
+position = Vector2(878.5, 0)
+scale = Vector2(18.95, 1.28)
+texture = ExtResource("6_2uief")
+
+[node name="RedFeedbackTimer" type="Timer" parent="NoteMarker3"]
+wait_time = 0.4
+one_shot = true
 
 [node name="Conductor" parent="." instance=ExtResource("3_uirvw")]
 bpm = 115
 
 [node name="Road" type="Sprite2D" parent="."]
+z_index = 3
 position = Vector2(619, 211)
 texture = ExtResource("4_quxc5")
 
@@ -41,13 +71,16 @@ position = Vector2(1314, 211)
 texture = ExtResource("4_quxc5")
 
 [node name="NoteCursor" type="Sprite2D" parent="."]
-z_index = 2
+z_index = 5
 position = Vector2(90, 212)
 scale = Vector2(0.12, 3.92)
 texture = ExtResource("6_2uief")
 
 [connection signal="increment_score" from="NoteMarker" to="Score" method="incrementScore"]
+[connection signal="timeout" from="NoteMarker/GreenFeedbackTimer" to="." method="_on_green_feedback_timer_timeout"]
 [connection signal="increment_score" from="NoteMarker2" to="Score" method="incrementScore"]
+[connection signal="timeout" from="NoteMarker2/BlueFeedbackTimer" to="." method="_on_blue_feedback_timer_timeout"]
 [connection signal="increment_score" from="NoteMarker3" to="Score" method="incrementScore"]
+[connection signal="timeout" from="NoteMarker3/RedFeedbackTimer" to="." method="_on_red_feedback_timer_timeout"]
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]

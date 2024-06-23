@@ -34,7 +34,7 @@ shape = SubResource("RectangleShape2D_s8pkn")
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="Node2D"]
-z_index = 3
+z_index = 10
 offset_left = -11.0
 offset_top = -11.6
 offset_right = 10.0
