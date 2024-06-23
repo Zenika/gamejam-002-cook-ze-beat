@@ -20629,10 +20629,12 @@ layer_6/tile_data = PackedInt32Array(-589824, 2097152, 4, -524288, 2097152, 4, -
 
 [node name="Player" parent="." instance=ExtResource("2_xd3ud")]
 position = Vector2(717, 153)
+playerColor = Color(0.607843, 0.858824, 0.258824, 1)
 
 [node name="Player2" parent="." instance=ExtResource("2_xd3ud")]
 position = Vector2(785, 150)
 playerIndex = 1
+playerColor = Color(0.964706, 0.635294, 0.658824, 1)
 moveRightAction = "move_right_2"
 moveLeftAction = "move_left_2"
 moveUpAction = "move_up_2"
@@ -20644,6 +20646,7 @@ actionAction = "action_2"
 [node name="Player3" parent="." instance=ExtResource("2_xd3ud")]
 position = Vector2(751, 227)
 playerIndex = 2
+playerColor = Color(0.607843, 0.592157, 0.72549, 1)
 moveRightAction = "move_right_3"
 moveLeftAction = "move_left_3"
 moveUpAction = "move_up_3"

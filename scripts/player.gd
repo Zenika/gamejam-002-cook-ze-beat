@@ -4,6 +4,7 @@ class_name Player
 var currentAreaIds = [null, null, null, null]
 @export var speed = 400
 @export var playerIndex: int
+@export var playerColor: Color
 @export var moveRightAction = "move_right"
 @export var moveLeftAction = "move_left"
 @export var moveUpAction = "move_up"
@@ -37,6 +38,9 @@ func animate_on_move(velocity):
 
 func _ready():
 	$AnimatedSprite2D.sprite_frames = playerSkins[playerIndex]
+	$Label.text = "J" + str(playerIndex+1)
+	$Label.set("theme_override_colors/font_color", playerColor)
+	
 
 func _process(delta):
 	var velocity = Vector2.ZERO
@@ -78,3 +82,8 @@ func onEnteredArea(id):
 
 func onExitedArea():
 	currentAreaIds[playerIndex] = null
+
+
+func _on_timer_timeout():
+	$Label.visible = false
+	pass # Replace with function body.
