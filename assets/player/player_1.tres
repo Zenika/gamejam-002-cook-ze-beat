@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://btvlf4bh2uj5"]
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dpqnq4fo0lc07"]
 
 [ext_resource type="Texture2D" uid="uid://k4cp0g8ajoc0" path="res://assets/player/Green/stand.png" id="1_2nolc"]
 [ext_resource type="Texture2D" uid="uid://cklndhawryic3" path="res://assets/player/Green/walk_back_1.png" id="2_3d4fp"]
