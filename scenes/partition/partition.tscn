@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpbbob0ttfc1d" path="res://Sprites/notes_markers/blue.png" id="5_lcf4y"]
 [ext_resource type="Texture2D" uid="uid://dlyp1oteodl0p" path="res://Sprites/notes_markers/red.png" id="6_2uief"]
 [ext_resource type="Texture2D" uid="uid://d3j1h0nm2fi1t" path="res://Sprites/notes_markers/green.png" id="7_wp0wo"]
-[ext_resource type="PackedScene" uid="uid://dtbg7s6asp1bj" path="res://scenes/score.tscn" id="8_mr4dm"]
+[ext_resource type="PackedScene" uid="uid://ej2uom3aty3b" path="res://scenes/score.tscn" id="8_mr4dm"]
 
 [node name="Partition" type="Node2D"]
 script = ExtResource("1_v8fus")
@@ -63,8 +63,8 @@ position = Vector2(619, 211)
 texture = ExtResource("4_quxc5")
 
 [node name="Score" parent="." instance=ExtResource("8_mr4dm")]
-position = Vector2(-952, 96)
-scale = Vector2(2.42, 2.42)
+position = Vector2(-348, 86)
+scale = Vector2(1.42, 1.42)
 
 [node name="Road2" type="Sprite2D" parent="."]
 position = Vector2(1314, 211)
