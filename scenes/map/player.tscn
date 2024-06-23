@@ -21,4 +21,16 @@ position = Vector2(-1, 19)
 shape = SubResource("RectangleShape2D_ctnw8")
 one_way_collision = true
 
+[node name="Label" type="Label" parent="."]
+offset_left = -36.0
+offset_top = -98.0
+offset_right = 35.0
+offset_bottom = -33.0
+text = "J1"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
