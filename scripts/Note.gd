@@ -37,7 +37,7 @@ func initialize(lane):
 		printerr("Invalid lane set for note: " + str(lane))
 		return
 		
-	speed = DIST_TO_TARGET / 2.0
+	speed = DIST_TO_TARGET / 4.0
 	
 func destroy():
 	$CPUParticles2D.emitting = true
