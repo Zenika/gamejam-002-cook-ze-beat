@@ -104,8 +104,12 @@ func _spawn_notes(to_spawn):
 		lane = rand
 		instance = note.instantiate()
 		instance.initialize(lane)
+		instance.on_missed_note.connect(losePoints)
+
 		add_child(instance)
 
+func losePoints(points: int):
+	$Score.incrementScore(points)
 
 func _on_Conductor_measure(position):
 	if position == 1:
