@@ -11,11 +11,4 @@ script = ExtResource("1_vxslw")
 offset_right = 56.0
 offset_bottom = 23.0
 text = "Score :"
-
-[node name="ValeurScore" type="Node2D" parent="."]
-
-[node name="Label" type="Label" parent="ValeurScore"]
-offset_left = 56.0
-offset_right = 112.0
-offset_bottom = 23.0
-text = "0"
+metadata/_edit_use_anchors_ = true
