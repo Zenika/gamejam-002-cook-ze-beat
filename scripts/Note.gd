@@ -67,4 +67,4 @@ func destroy(score):
 		$Node2D/Label.modulate = Color('f6d6bd')
 	
 func _on_Timer_timeout():
-	queue_free()
+	visible = false
