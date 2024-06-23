@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpbb313y7rhrg"
-path="res://.godot/imported/cat_stand.png-645e83b01c1627cdae86c37a37496208.ctex"
+uid="uid://2rdeed0hxwhy"
+path="res://.godot/imported/stand_side.png-9e7533fa84f419c02cbb10a558482fff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Cat/cat_stand.png"
-dest_files=["res://.godot/imported/cat_stand.png-645e83b01c1627cdae86c37a37496208.ctex"]
+source_file="res://assets/player/Pink/stand_side.png"
+dest_files=["res://.godot/imported/stand_side.png-9e7533fa84f419c02cbb10a558482fff.ctex"]
 
 [params]
 
