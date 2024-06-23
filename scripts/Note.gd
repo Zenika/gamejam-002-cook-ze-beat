@@ -22,7 +22,8 @@ func _physics_process(delta):
 	if !hit:
 		position.x += speed * delta
 		if position.x < 0:
-			queue_free()
+			
+			disapear()
 	else:
 		$Node2D.position.y -= speed * delta
 
@@ -41,6 +42,14 @@ func initialize(lane):
 		return
 		
 	speed = DIST_TO_TARGET / 4.0
+	
+func disapear():
+	$CPUParticles2D.emitting = true
+	$AnimatedSprite2D.visible = false
+	hit = true
+	$Timer.start()
+	$Node2D/Label.text = "😭"
+	$Node2D/Label.modulate = Color('f6d6bd')
 	
 func destroy(score):
 	$CPUParticles2D.emitting = true
