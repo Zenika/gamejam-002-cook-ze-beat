@@ -9,7 +9,8 @@ var soundEmeric = preload("res://assets/sounds/cook-ze-beat-emeric.wav")
 var sounds = [soundLucas, soundNirina, soundPops, soundTheo, soundEmeric]
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready():	
+	get_tree().paused = false;
 	var soundToPlay = sounds.pick_random()
 	$AudioStreamPlayer2D.stream = soundToPlay
 	$AudioStreamPlayer2D.play()
