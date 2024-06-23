@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bom3562arb634"]
+[gd_scene load_steps=4 format=3 uid="uid://bom3562arb634"]
 
 [ext_resource type="Texture2D" uid="uid://8ioaj5bthnax" path="res://assets/menu/orchestra.webp" id="1_jby7u"]
 [ext_resource type="Texture2D" uid="uid://ctr38hwavghyj" path="res://assets/menu/logo.png" id="2_meu30"]
+[ext_resource type="Script" path="res://scenes/menu/Button.gd" id="3_ofowt"]
 
 [node name="Menu" type="Node"]
 
@@ -36,11 +37,6 @@ size_flags_vertical = 4
 texture = ExtResource("2_meu30")
 stretch_mode = 4
 
-[node name="Spacer3" type="Control" parent="HUD/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD/VBoxContainer"]
 layout_mode = 2
 
@@ -60,7 +56,9 @@ theme_override_constants/margin_bottom = 20
 
 [node name="Button" type="Button" parent="HUD/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+action_mode = 0
 text = "Start"
+script = ExtResource("3_ofowt")
 
 [node name="Spacer2" type="Control" parent="HUD/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -70,3 +68,5 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[connection signal="pressed" from="HUD/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/Button" to="HUD/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/Button" method="_on_pressed"]
