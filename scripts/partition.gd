@@ -25,7 +25,7 @@ var instance
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	$Conductor.play_with_beat_offset(8)
+	$Conductor.play_with_beat_offset(12)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
