@@ -104,7 +104,7 @@ func _spawn_notes(to_spawn):
 		lane = rand
 		instance = note.instantiate()
 		instance.initialize(lane)
-		instance.on_missed_note.connect(losePoints)
+
 
 		add_child(instance)
 

@@ -15,13 +15,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8pkn"]
-size = Vector2(100, 100)
+size = Vector2(2, 100)
 
 [node name="Note" type="Area2D" groups=["note"]]
 script = ExtResource("1_5tygb")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-gravity = Vector2(980, 2.08165e-12)
+spread = 46.36
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ica5f")
@@ -32,10 +32,9 @@ shape = SubResource("RectangleShape2D_s8pkn")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
-scale = Vector2(5, 5)
 
 [node name="Label" type="Label" parent="Node2D"]
-offset_left = -10.4784
-offset_top = -11.6173
-offset_right = 10.5216
-offset_bottom = 11.3827
+offset_left = -11.0
+offset_top = -11.6
+offset_right = 10.0
+offset_bottom = 11.4
