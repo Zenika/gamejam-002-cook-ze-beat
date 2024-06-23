@@ -13,11 +13,20 @@ func validateInstrument(instrumentLetter):
 	_raise_instrument()
 	if instrumentLetter == input:
 		if current_note != null:
-			increment_score.emit(1)
-			current_note.destroy()
+			winPoints()
+		else:
+			losePoints()
 		_reset()
 	else:
+		losePoints()
 		print("loser")
+
+func winPoints():
+	increment_score.emit(1)
+	current_note.destroy()
+
+func losePoints():
+	increment_score.emit(-1)
  
 func _raise_instrument():
 	if !$BumpTimer.is_stopped():
@@ -47,6 +56,7 @@ func _on_HitArea_area_entered(area):
 		
 func _on_HitArea_area_exited(area):
 	if area.is_in_group("note"):
+		losePoints()
 		hit = false
 		current_note = null
 		
