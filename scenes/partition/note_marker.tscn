@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwsen36xsre5b"]
+[gd_scene load_steps=6 format=3 uid="uid://dwsen36xsre5b"]
 
 [ext_resource type="Script" path="res://scripts/NoteMarker.gd" id="1_jmc1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gor0v"]
 size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whnir"]
+size = Vector2(16, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkcef"]
+size = Vector2(48, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psuxn"]
+size = Vector2(96, 20)
 
 [node name="NoteMarker" type="Sprite2D"]
 script = ExtResource("1_jmc1j")
@@ -20,7 +29,28 @@ shape = SubResource("RectangleShape2D_gor0v")
 wait_time = 0.2
 one_shot = true
 
+[node name="PerfectArea" type="Area2D" parent="."]
+
+[node name="PerfectCollisionShape2D" type="CollisionShape2D" parent="PerfectArea"]
+shape = SubResource("RectangleShape2D_whnir")
+
+[node name="GoodArea" type="Area2D" parent="."]
+
+[node name="GoodCollisionShape2D" type="CollisionShape2D" parent="GoodArea"]
+shape = SubResource("RectangleShape2D_jkcef")
+
+[node name="OkayArea" type="Area2D" parent="."]
+
+[node name="OkayCollisionShape2D" type="CollisionShape2D" parent="OkayArea"]
+shape = SubResource("RectangleShape2D_psuxn")
+
 [connection signal="area_entered" from="HitArea" to="." method="_on_HitArea_area_entered"]
 [connection signal="area_exited" from="HitArea" to="." method="_on_HitArea_area_exited"]
 [connection signal="timeout" from="PushTimer" to="." method="_on_PushTimer_timeout"]
 [connection signal="timeout" from="BumpTimer" to="." method="_lower_instrument"]
+[connection signal="area_entered" from="PerfectArea" to="." method="_on_perfect_area_area_entered"]
+[connection signal="area_exited" from="PerfectArea" to="." method="_on_perfect_area_area_exited"]
+[connection signal="area_entered" from="GoodArea" to="." method="_on_good_area_area_entered"]
+[connection signal="area_exited" from="GoodArea" to="." method="_on_good_area_area_exited"]
+[connection signal="area_entered" from="OkayArea" to="." method="_on_okay_area_area_entered"]
+[connection signal="area_exited" from="OkayArea" to="." method="_on_okay_area_area_exited"]

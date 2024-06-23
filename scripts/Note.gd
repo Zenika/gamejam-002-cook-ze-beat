@@ -39,13 +39,20 @@ func initialize(lane):
 		
 	speed = DIST_TO_TARGET / 4.0
 	
-func destroy():
+func destroy(score):
 	$CPUParticles2D.emitting = true
 	$AnimatedSprite2D.visible = false
 	$Timer.start()
 	hit = true
-	$Node2D/Label.text = "🔥"
-	$Node2D/Label.modulate = Color('f6d6bd')
+	if score == 3:
+		$Node2D/Label.text = "🔥"
+		$Node2D/Label.modulate = Color('f6d6bd')
+	elif score == 2:
+		$Node2D/Label.text = "👌"
+		$Node2D/Label.modulate = Color('f6d6bd')
+	elif score == 1:
+		$Node2D/Label.text = "🙂"
+		$Node2D/Label.modulate = Color('f6d6bd')
 	
 func _on_Timer_timeout():
 	queue_free()

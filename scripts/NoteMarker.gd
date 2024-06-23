@@ -1,10 +1,17 @@
 extends Sprite2D
 
-var hit = false
+var perfect = false
+var good = false
+var okay = false
+
 var current_note = null
 
 const SHAKE_MOVEMENT_Y = 5
 const SHAKE_MOVEMENT_X = 5
+
+const PERFECT_POINTS = 3
+const GOOD_POINTS = 2
+const OKAY_POINTS = 1
 
 @export var input = ""
 signal increment_score(score: int)
@@ -22,8 +29,16 @@ func validateInstrument(instrumentLetter):
 		print("loser")
 
 func winPoints():
-	increment_score.emit(1)
-	current_note.destroy()
+	if perfect:
+		increment_score.emit(PERFECT_POINTS)
+		current_note.destroy(PERFECT_POINTS)
+	elif good:
+		increment_score.emit(GOOD_POINTS)
+		current_note.destroy(GOOD_POINTS)
+	elif okay:
+		increment_score.emit(OKAY_POINTS)
+		current_note.destroy(OKAY_POINTS)
+	
 
 func losePoints():
 	increment_score.emit(-1)
@@ -38,32 +53,46 @@ func _lower_instrument():
 	position.y += SHAKE_MOVEMENT_Y
 	position.x += SHAKE_MOVEMENT_X
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-	
-func _on_HitArea_area_entered(area):
-	if area.is_in_group("note"):
-		hit = true
-		current_note = area
-		
-func _on_HitArea_area_exited(area):
-	if area.is_in_group("note"):
-		losePoints()
-		hit = false
-		current_note = null
 		
 func _reset():
 	current_note = null
-	hit = false
+
+	perfect = false
+	good = false
+	okay = false
 
 
 func _on_PushTimer_timeout():
 	frame = 0
+
+
+func _on_perfect_area_area_entered(area):
+	if area.is_in_group("note"):
+		perfect = true
+
+
+func _on_perfect_area_area_exited(area):
+	if area.is_in_group("note"):
+		perfect = false
+
+
+func _on_good_area_area_entered(area):
+	if area.is_in_group("note"):
+		good = true
+
+func _on_good_area_area_exited(area):
+	if area.is_in_group("note"):
+		good = false
+
+func _on_okay_area_area_entered(area):
+	if area.is_in_group("note"):
+		okay = true
+		current_note = area
+
+
+func _on_okay_area_area_exited(area):
+	if area.is_in_group("note"):
+		losePoints()
+		okay = false
+		current_note = null
+	
