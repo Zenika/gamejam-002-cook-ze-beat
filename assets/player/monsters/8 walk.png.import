@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba4k83jd1t2k7"
-path="res://.godot/imported/TileSets Terrain Example.webp-b15544157a2e61e44553c8e1d56ba1d4.ctex"
+uid="uid://cisjf4sof2sw"
+path="res://.godot/imported/8 walk.png-b516c09f946467f85e06c88797fb83f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/TileSets Terrain Example.webp"
-dest_files=["res://.godot/imported/TileSets Terrain Example.webp-b15544157a2e61e44553c8e1d56ba1d4.ctex"]
+source_file="res://assets/player/monsters/8 walk.png"
+dest_files=["res://.godot/imported/8 walk.png-b516c09f946467f85e06c88797fb83f7.ctex"]
 
 [params]
 
