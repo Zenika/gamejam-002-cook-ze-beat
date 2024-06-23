@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cuqx2xw5cldql" path="res://scenes/map/map.tscn" id="1_xaelo"]
 [ext_resource type="PackedScene" uid="uid://dtl01y20872wp" path="res://scenes/partition/partition.tscn" id="2_rl4dk"]
-[ext_resource type="Texture2D" uid="uid://ctr38hwavghyj" path="res://assets/menu/logo.png" id="3_hgivc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_16yf7"]
+load_path = "res://.godot/imported/logo.png-0da8f6a4d54f3f921aaad24ff5236571.ctex"
 
 [node name="Game" type="Node2D"]
 
@@ -21,6 +23,6 @@ position = Vector2(968, 539)
 position = Vector2(203, 166)
 rotation = -0.441568
 scale = Vector2(0.329134, 0.329134)
-texture = ExtResource("3_hgivc")
+texture = SubResource("CompressedTexture2D_16yf7")
 
 [connection signal="playInstrument" from="Map" to="Partition" method="_on_main_play_instrument"]

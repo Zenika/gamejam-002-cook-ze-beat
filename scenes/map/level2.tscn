@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0k0mejnrxyn7"]
+[gd_scene load_steps=8 format=3 uid="uid://cx4hl0ghfj7dq"]
 
 [ext_resource type="Texture2D" uid="uid://c2xo6ibfgno5w" path="res://assets/images/atlas_48x.png" id="1_7rd4q"]
 [ext_resource type="Script" path="res://scenes/map/level2.gd" id="1_sgsfo"]
 [ext_resource type="PackedScene" uid="uid://cgabuc88rbul1" path="res://scenes/map/player.tscn" id="2_4b4ce"]
 [ext_resource type="PackedScene" uid="uid://djyox6kxhm3h7" path="res://scenes/map/sound_area.tscn" id="3_bg2ar"]
-[ext_resource type="PackedScene" uid="uid://dkmggkbup151a" path="res://scenes/map/river.tscn" id="4_dg1lh"]
+[ext_resource type="PackedScene" path="res://scenes/map/river.tscn" id="4_dg1lh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wwyr"]
 texture = ExtResource("1_7rd4q")
@@ -17174,10 +17174,12 @@ position = Vector2(0, 24)
 
 [node name="Player" parent="." instance=ExtResource("2_4b4ce")]
 position = Vector2(489, 168)
+playerColor = Color(0.607843, 0.858824, 0.258824, 1)
 
 [node name="Player2" parent="." instance=ExtResource("2_4b4ce")]
 position = Vector2(489, 168)
 playerIndex = 1
+playerColor = Color(0.607843, 0.858824, 0.258824, 1)
 moveRightAction = "move_right_2"
 moveLeftAction = "move_left_2"
 moveUpAction = "move_up_2"
