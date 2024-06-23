@@ -6,7 +6,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource("1_xaelo")]
-position = Vector2(0, 328)
+position = Vector2(-8, 328)
 scale = Vector2(1.3, 1.3)
 
 [node name="Partition" parent="." instance=ExtResource("2_rl4dk")]
